@@ -21,11 +21,11 @@ class ManageOrderView(View):
             tipo_consulta = "New Orders"
         if status == 1:
             tipo_consulta = "In Preparation"
-        if status == 2::
+        if status == 2:
             tipo_consulta = "Ready"
-        if status == 3::
+        if status == 3:
             tipo_consulta = "Delivered"
-        if status == 9::
+        if status == 9:
             tipo_consulta = "Cancelled"
 
         context = {'manage_orders':data_manage_order, 'tipo_consulta':tipo_consulta}
