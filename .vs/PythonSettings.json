@@ -1,4 +1,5 @@
 {
   "Interpreter": "Global|VisualStudio|env_Brazuka (Python 3.10 (64-bit))",
-  "TestFramework": "Pytest"
+  "TestFramework": "Pytest",
+  "SuppressConfigureTestFrameworkPrompt": "true"
 }
