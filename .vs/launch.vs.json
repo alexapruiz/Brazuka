@@ -4,7 +4,7 @@
   "configurations": [
     {
       "type": "python",
-      "interpreter": "(default)",
+      "interpreter": "c:\\projetos\\Brazuka\\env_Brazuka\\scripts\\python.exe",
       "interpreterArguments": "",
       "scriptArguments": "runserver",
       "env": {},
