@@ -31,6 +31,7 @@
 						<th>Quantity</th>
 						<th>Product</th>
 						<th>Delivery Date</th>
+						<th>Method Delivery</th>
 						{% if tipo_consulta == 'Ready' or tipo_consulta == 'Delivered' %}
 							<th>Address</th>
 						{% endif %}
@@ -46,6 +47,7 @@
 					<td>{{order.2}}</td>
 					<td>{{order.3}}</td>
 					<td>{{order.4}}</td>
+					<td>{{order.5}}</td>
 					<td>{{order.6}}</td>
 					{% if tipo_consulta == 'Ready' or tipo_consulta == 'Delivered' %}
 						<td>{{order.8}}</td>
