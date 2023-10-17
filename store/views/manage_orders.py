@@ -34,17 +34,26 @@ class ManageOrderView(View):
 
     def Update_Orders(request, ID, status):
 
-        ComandoSQL = f"select status from store_order where ID = {ID}"
+        ComandoSQL = f"select status , quantity , product_id from store_order where ID = {ID}"
         cursor_manage_order = connection.cursor()
         cursor_manage_order.execute(ComandoSQL)
         dados = cursor_manage_order.fetchone()
         status_atual = dados[0]
+        qtde = dados[1]
+        id_produto = dados[2]
         cursor_manage_order.close
         
         cursor_manage_order2 = connection.cursor()
         ComandoSQL = f"update store_order set status = {status} where ID = {ID}"
         cursor_manage_order2.execute(ComandoSQL)
         cursor_manage_order2.close
+
+        if status == 3:
+            cursor_manage_inventoty = connection.cursor()
+            ComandoSQL = f"update store_inventory set qtde = qtde - {qtde} where id_product_id = {id_produto}"
+            cursor_manage_inventoty.execute(ComandoSQL)
+            cursor_manage_inventoty.close
+
 
         if int(status_atual) == 0:
             return redirect(f"/manage_orders/0")

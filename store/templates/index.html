@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
 {% load cart %}
 {% load custom_filter %}
 <!-- body -->
@@ -10,9 +8,7 @@
 		<!-- filter -->
 		<div class="col-lg-3 mx-auto">
 			<div class="list-group">
-
 				<a href="/" class="list-group-item list-group-item-action btn btn-outline-success">All Products</a>
-
 				{% for category in categories %}
 				<a href="/?category={{category.id}}"
 				   class="list-group-item list-group-item-action btn btn-outline-success ">{{category.name}}</a>
@@ -34,14 +30,14 @@
 					<div class="card-footer p-0 no-gutters">
 						{% if product|is_in_cart:request.session.cart %}
 						<div class="row no-gutters">
-							<form action="/#{{product.id}}" class="col-2 " method="post">
+							<form action="/#{{product.id}}" class="col-2 " method="POST">
 								{% csrf_token %}
 								<input hidden type="text" name='product' value='{{product.id}}'>
 								<input hidden type="text" name='remove' value='True'>
 								<input type="submit" value=" - " class="btn btn-block btn-success border-right">
 							</form>
 							<div class="text-center col btn btn-success">{{product|cart_quantity:request.session.cart}} in Cart</div>
-							<form action="/#{{product.id}}" class="col-2 " method="post">
+							<form action="/#{{product.id}}" class="col-2 " method="POST">
 								{% csrf_token %}
 								<input hidden type="text" name='product' value='{{product.id}}'>
 								<input type="submit" value=" + " class="btn btn-block btn-success border-left">

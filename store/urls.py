@@ -35,4 +35,6 @@ urlpatterns = [
     path('manage_payments/', ManagePaymentsView.Payments, name='manage_payments'),
     
     path('manage_inventory/', ManageInventoryView.Inventory, name='manage_inventory'),
+    path('manage_inventory/add/<int:ID>/<int:qtde>', ManageInventoryView.Add_Inventory, name='manage_inventory'),
+    path('manage_inventory/subtract/<int:ID>/<int:qtde>',ManageInventoryView.Sub_Inventory, name='manage_inventory'),
 ]

@@ -11,7 +11,7 @@ class AdminProduct(admin.ModelAdmin):
 
 
 class AdminCategory(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['id','name']
 
 
 class AdminCustomer(admin.ModelAdmin):
@@ -19,11 +19,11 @@ class AdminCustomer(admin.ModelAdmin):
 
 
 class AdminOrder(admin.ModelAdmin):
-    list_display = ['customer','product','quantity','price','address','date_order','date_delivery','status']
+    list_display = ['customer',Products,'quantity','price','address','date_order','date_delivery','status']
 
 
 class AdminInventory(admin.ModelAdmin):
-    list_display = ['id_product_id',Products,'qtde']
+    list_display = [Products,'qtde']
 
 
 # Register your models here.
