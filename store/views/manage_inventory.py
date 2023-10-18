@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.db import connection
+from store.models.customer import Customer
 
 class ManageInventoryView(View):
 
@@ -12,6 +13,10 @@ class ManageInventoryView(View):
         cursor_manage_inventory.execute(ComandoSQL)
         data_manage_inventory = cursor_manage_inventory.fetchall()
         context = {'Inventory': data_manage_inventory}
+
+        customer = Customer.get_customer_by_id(request.session.get('customer'))
+        if customer:
+            context['usuario'] = customer.first_name
 
         return render(request , 'manage_inventory.html', context)
 

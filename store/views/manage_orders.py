@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.db import connection
+from store.models.customer import Customer
 
 class ManageOrderView(View):
 
@@ -28,7 +29,12 @@ class ManageOrderView(View):
         if status == 9:
             tipo_consulta = "Cancelled"
 
-        context = {'manage_orders':data_manage_order, 'tipo_consulta':tipo_consulta}
+        context = {'manage_orders': data_manage_order, 'tipo_consulta': tipo_consulta}
+
+        customer = Customer.get_customer_by_id(request.session.get('customer'))
+        if customer:
+            context['usuario'] = customer.first_name
+
         return render(request , 'manage_orders.html'  , context)
 
 

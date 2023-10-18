@@ -11,4 +11,9 @@ class OrderView(View):
     def get(self , request ):
         customer = request.session.get('customer')
         orders = Order.get_orders_by_customer(customer)
-        return render(request , 'orders.html'  , {'orders' : orders})
+
+        customer = Customer.get_customer_by_id(request.session.get('customer'))
+        if customer:
+            context['usuario'] = customer.first_name
+
+        return render(request , 'orders.html'  , {'orders' : orders} , {'usuario' : customer.first_name})

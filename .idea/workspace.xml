@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0026511d-f6ce-4fde-85b6-671aebc7350b" name="Changes" comment="" />
+    <list default="true" id="0026511d-f6ce-4fde-85b6-671aebc7350b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brazuka.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Brazuka.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/store/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views/manage_inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views/manage_inventory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views/manage_orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views/manage_orders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views/manage_payments.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views/manage_payments.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/views/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/views/orders.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +70,17 @@
       <updated>1697301863317</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

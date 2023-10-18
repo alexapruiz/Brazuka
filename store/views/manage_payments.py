@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.db import connection
+from store.models.customer import Customer
 
 class ManagePaymentsView(View):
 
@@ -17,5 +18,10 @@ class ManagePaymentsView(View):
         cursor_manage_order.execute(ComandoSQL)
         data_manage_order = cursor_manage_order.fetchall()
         context = {'manage_payments':data_manage_order}
+
+        customer = Customer.get_customer_by_id(request.session.get('customer'))
+        if customer:
+            context['usuario'] = customer.first_name
+
         return render(request , 'manage_payments.html'  , context)
 
