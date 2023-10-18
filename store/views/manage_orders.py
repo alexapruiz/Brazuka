@@ -6,12 +6,12 @@ class ManageOrderView(View):
 
     def Orders(request, status=-1):
         
-        ComandoSQL = f"select O.id , C.first_name , C.last_name , O.quantity , P.name , O.price , O.date_delivery, O.status , substr(O.address,1,50) "
+        ComandoSQL = f"select O.id , C.first_name , C.last_name , P.name , O.quantity , O.price , O.date_delivery, O.Delivery_Pickup , O.status , substr(O.address,1,50) "
         ComandoSQL += f" from store_order O , store_customer C , store_products P "
         ComandoSQL += f" where O.customer_id = C.id "
         ComandoSQL += f" and O.product_id = P.id "
         ComandoSQL += f" and O.status = {status}"
-        ComandoSQL += f" order by O.date_delivery , C.first_name"
+        ComandoSQL += f" order by C.first_name , O.date_delivery"
 
         cursor_manage_order = connection.cursor()
         cursor_manage_order.execute(ComandoSQL)
