@@ -1,8 +1,9 @@
 from django.shortcuts import render , redirect , HttpResponseRedirect
 from store.models.product import Products
 from store.models.category import Category
+from store.models.customer import Customer
 from django.views import View
-#from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 
 class Index(View):
@@ -49,8 +50,14 @@ def store(request):
     else:
         products = Products.get_all_products();
 
+
+    customer = Customer.get_customer_by_id(request.session.get('customer'))
+
     data = {}
     data['products'] = products
     data['categories'] = categories
-                                
+
+    if customer:
+        data['usuario'] = customer.first_name
+
     return render(request, 'index.html', data)

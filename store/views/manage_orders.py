@@ -6,12 +6,12 @@ class ManageOrderView(View):
 
     def Orders(request, status=-1):
         
-        ComandoSQL = f"select O.id , C.first_name , C.last_name , O.quantity , P.name , O.price , O.date_delivery, O.status , substr(O.address,1,50) "
+        ComandoSQL = f"select O.id , C.first_name , C.last_name , P.name , O.quantity , O.price , O.date_delivery, O.Delivery_Pickup , O.status , substr(O.address,1,50) , O.time_delivery"
         ComandoSQL += f" from store_order O , store_customer C , store_products P "
         ComandoSQL += f" where O.customer_id = C.id "
         ComandoSQL += f" and O.product_id = P.id "
         ComandoSQL += f" and O.status = {status}"
-        ComandoSQL += f" order by O.date_delivery , C.first_name"
+        ComandoSQL += f" order by C.first_name , O.date_delivery"
 
         cursor_manage_order = connection.cursor()
         cursor_manage_order.execute(ComandoSQL)
@@ -34,17 +34,26 @@ class ManageOrderView(View):
 
     def Update_Orders(request, ID, status):
 
-        ComandoSQL = f"select status from store_order where ID = {ID}"
+        ComandoSQL = f"select status , quantity , product_id from store_order where ID = {ID}"
         cursor_manage_order = connection.cursor()
         cursor_manage_order.execute(ComandoSQL)
         dados = cursor_manage_order.fetchone()
         status_atual = dados[0]
+        qtde = dados[1]
+        id_produto = dados[2]
         cursor_manage_order.close
         
         cursor_manage_order2 = connection.cursor()
         ComandoSQL = f"update store_order set status = {status} where ID = {ID}"
         cursor_manage_order2.execute(ComandoSQL)
         cursor_manage_order2.close
+
+        if status == 3:
+            cursor_manage_inventoty = connection.cursor()
+            ComandoSQL = f"update store_inventory set qtde = qtde - {qtde} where id_product_id = {id_produto}"
+            cursor_manage_inventoty.execute(ComandoSQL)
+            cursor_manage_inventoty.close
+
 
         if int(status_atual) == 0:
             return redirect(f"/manage_orders/0")

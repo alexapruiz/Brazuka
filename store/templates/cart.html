@@ -2,6 +2,44 @@
 {% block content %}
 {% load cart %}
 {% load custom_filter %}
+<script>
+    function ShowObjectsDelivery()
+    {
+        var obj = document.getElementById('DeliveryAddress');
+        obj.style.display = "block";
+
+        var obj2 = document.getElementById('LblDeliveryAddress');
+        obj2.style.display = "block";
+
+        var obj3 = document.getElementById('LblDeliveryTax');
+        obj3.style.display = "block";
+
+        var obj4 = document.getElementById('BtnDelivery');
+        obj4.className = "btn btn-success"
+
+        var obj5 = document.getElementById('BtnPickup');
+        obj5.className = "btn btn-secondary"
+
+    }
+    function ShowObjectsPickup()
+    {
+        var obj = document.getElementById('DeliveryAddress');
+        obj.style.display = "none";
+
+        var obj2 = document.getElementById('LblDeliveryAddress');
+        obj2.style.display = "none";
+
+        var obj3 = document.getElementById('LblDeliveryTax');
+        obj3.style.display = "none";
+
+        var obj4 = document.getElementById('BtnPickup');
+        obj4.className = "btn btn-success"
+
+        var obj5 = document.getElementById('BtnDelivery');
+        obj5.className = "btn btn-secondary"
+    }
+
+</script>
 <div class="container">
     <div class="border rounded p-4 m-4">
         <p class="display-4 pl-4 ml-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspYour Cart </p>
@@ -62,19 +100,29 @@
           <div class="m-2 p-3">
             <form action="/check-out" method="POST">
                 {% csrf_token %}
+                <table>
+                    <tr align="center">
+                        <td> <strong> Delivery Method 🛒 </td>
+                        <td><input name="Opt_Delivery_Pickup" type="radio" id="Opt_Delivery_Pickup1" value="Delivery" checked onclick="ShowObjectsDelivery()"/> Receive at home </td>
+                        <td><input name="Opt_Delivery_Pickup" type="radio" id="Opt_Delivery_Pickup2" value="Pickup" onclick="ShowObjectsPickup()"/> Pickup </td>
+                    </tr>
+                </table>
                 <div class="form-group">
-                    <label for="">Delivery address</label>
-                    <input type="text" name="address" maxLength=50 id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <label id="LblDeliveryAddress">Address</label>
+                    <input type="text" name="DeliveryAddress" maxLength=50 id="DeliveryAddress" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <div class="form-group">
+                    <label style="color:red" id="LblDeliveryTax"> Shipping costs will be charged separately </label>
                 </div>
                 <div class="form-group">
                     <label for="">Delivery date</label>
-                    <input type="date" name="date_delivery" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="date" name="date_delivery" class="form-control" aria-describedby="helpId">
+                    <input type="time" name="time_delivery" class="form-control" aria-describedby="helpId">
                 </div>
                 <input type="submit" class="btn float-right btn-outline-success col-lg-6" value="Check out">
             </form>
           </div>
         </div>
-        
       </div>
     </div>
   </div>

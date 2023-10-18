@@ -26,11 +26,10 @@
 				<thead>
 					<tr>
 						<th>Order ID</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Quantity</th>
+						<th>Name</th>
 						<th>Product</th>
-						<th>Delivery Date</th>
+						<th>Quantity</th>
+						<th>Delivery Date/Time</th>
 						{% if tipo_consulta == 'Ready' or tipo_consulta == 'Delivered' %}
 							<th>Address</th>
 						{% endif %}
@@ -42,40 +41,28 @@
 				{% for order in manage_orders %}
 				<tr>
 					<td>{{order.0}}</td>
-					<td>{{order.1}}</td>
-					<td>{{order.2}}</td>
+					<td>{{order.1}} {{order.2}}</td>
 					<td>{{order.3}}</td>
 					<td>{{order.4}}</td>
-					<td>{{order.6}}</td>
-					{% if tipo_consulta == 'Ready' or tipo_consulta == 'Delivered' %}
-						<td>{{order.8}}</td>
+					<td>{{order.6}} - {{order.10}}</td>
+					{% if order.8 == '0' %}
+						<td><a class="btn btn-warning" type="submit" href="/manage_orders/update/{{ order.0 }}/1"> In Preparation </a></td>
+						<td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>
 					{% endif %}
 
-					{% if order.7 == '0' %}
-					<!--<td><small class="badge badge-primary"> New Order </small></td>-->
-					<td><a class="btn btn-warning" type="submit" href="/manage_orders/update/{{ order.0 }}/1"> In Preparation </a></td>
-					<td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>
+					{% if order.8 == '1' %}
+						<td><a class="btn btn-info" type="submit" href="/manage_orders/update/{{ order.0 }}/2"> Ready </a></td>
+						<td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>
+						{% endif %}
+
+					{% if order.8 == '2' %}
+						<td>{{order.9}}</td>
+						<td><a class="btn btn-success" type="submit" href="/manage_orders/update/{{ order.0 }}/3"> Delivered </a></td>
+						<td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>
 					{% endif %}
 
-					{% if order.7 == '1' %}
-					<!--<td><small class="badge badge-warning"> In Preparation </small></td>-->
-					<td><a class="btn btn-info" type="submit" href="/manage_orders/update/{{ order.0 }}/2"> Ready </a></td>
-					<td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>
-					{% endif %}
-
-					{% if order.7 == '2' %}
-					<!--<td><small class="badge badge-info"> Ready </small></td>-->
-					<td><a class="btn btn-success" type="submit" href="/manage_orders/update/{{ order.0 }}/3"> Delivered </a></td>
-					<td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>
-					{% endif %}
-
-					{% if order.7 == '3' %}
-					<!--<td><small class="badge badge-success"> Delivered </small></td>-->
-					<!-- <td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>-->
-					{% endif %}
-
-					{% if order.7 == '9' %}
-					<!--<td><small class="badge badge-dark"> Cancelled </small></td>-->
+					{% if order.8 == '3' %}
+						<td>{{order.9}}</td>
 					{% endif %}
 				</tr>
 				{% endfor %}

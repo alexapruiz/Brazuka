@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\store\\views"
   ],
-  "SelectedNode": "\\manage.py",
+  "SelectedNode": "\\store",
   "PreviewInSolutionExplorer": false
 }

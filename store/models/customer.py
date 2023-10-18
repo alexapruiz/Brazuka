@@ -21,6 +21,14 @@ class Customer(models.Model):
             return False
 
 
+    @staticmethod
+    def get_customer_by_id(id):
+        try:
+            return Customer.objects.get(id = id)
+        except:
+            return False
+
+
     def isExists(self):
         if Customer.objects.filter(email = self.email):
             return True
