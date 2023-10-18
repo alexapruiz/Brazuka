@@ -29,7 +29,7 @@
 						<th>Name</th>
 						<th>Product</th>
 						<th>Quantity</th>
-						<th>Delivery Date</th>
+						<th>Delivery Date/Time</th>
 						{% if tipo_consulta == 'Ready' or tipo_consulta == 'Delivered' %}
 							<th>Address</th>
 						{% endif %}
@@ -44,7 +44,7 @@
 					<td>{{order.1}} {{order.2}}</td>
 					<td>{{order.3}}</td>
 					<td>{{order.4}}</td>
-					<td>{{order.6}}</td>
+					<td>{{order.6}} - {{order.10}}</td>
 					{% if order.8 == '0' %}
 						<td><a class="btn btn-warning" type="submit" href="/manage_orders/update/{{ order.0 }}/1"> In Preparation </a></td>
 						<td><a class="btn btn-dark" type="submit" href="/manage_orders/update/{{ order.0 }}/9"> Cancel </a></td>
