@@ -8,25 +8,26 @@
         {% csrf_token %}
         <div class="container">
             <div class="border rounded p-4 m-4">
-                <p class="display-4 pl-4 ml-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspManage Inventory</p>
+                <p class="display-4 pl-4 ml-4" align="center">Manage Inventory</p>
                 <table class="table" border="0">
-                    <thead>
-                        <tr>
-                            <th> Product ID </th>
-                            <th> Product Name </th>
-                            <th> Quantity </th>
-                            <th> Operations </th>
-                        </tr>
-                    </thead>
+                    <tr align="center">
+                        <th> Product ID </th>
+                        <th> Product Name </th>
+                        <th> Quantity </th>
+                        <th> + </th>
+                        <th> + </th>
+                        <th> - </th>
+                        <th> - </th>
+                    </tr>
                     {% for item in Inventory %}
                     <tr>
-                        <td> {{ item.0 }} </td>
+                        <td align="center"> {{ item.0 }} </td>
                         <td> {{ item.1 }} </td>
-                        <td><input size="4" id="Qtde" name="Qtde" readonly value={{ item.2 }}></td>
-                        <td><center><a class="btn btn-success" href="/manage_inventory/add/{{ item.0 }}/10"></span> +10  </a></center>
-                        <td><center><a class="btn btn-success" href="/manage_inventory/add/{{ item.0 }}/50"></span> +50 </a></center>
-                        <td><center><a class="btn btn-danger" href="/manage_inventory/subtract/{{ item.0 }}/10"></span> -10  </a></center>
-                        <td><center><a class="btn btn-danger" href="/manage_inventory/subtract/{{ item.0 }}/50"></span> -50 </a></center>
+                        <td align="center"><input size="4" id="Qtde" name="Qtde" readonly value={{ item.2 }}></td>
+                        <td align="center" width="5%"><a class="btn btn-success" href="/manage_inventory/add/{{ item.0 }}/10"> +10  </a></td>
+                        <td align="center" width="5%"><a class="btn btn-success" href="/manage_inventory/add/{{ item.0 }}/50"> +50 </a></td>
+                        <td align="center" width="5%"><a class="btn btn-danger" href="/manage_inventory/subtract/{{ item.0 }}/10"> -10 </a></td>
+                        <td align="center" width="5%"><a class="btn btn-danger" href="/manage_inventory/subtract/{{ item.0 }}/50"> -50 </a></td>
                     </tr>
                     {% endfor %}
                 </table>

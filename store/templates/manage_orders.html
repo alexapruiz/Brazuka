@@ -6,38 +6,30 @@
 	{% csrf_token %}
 	<div class="container">
 		<div class="border rounded p-4 m-4">
-			<p class="display-4 pl-4 ml-4">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspManage Orders - {{ tipo_consulta }} </p>
-			<hr>
+			<p class="display-4 pl-4 ml-4" align="center">Manage Orders - {{ tipo_consulta }} </p>
+			<table class="table" border="0">
+				<tr align="center">
+					<td><a class="btn btn-primary" href="/manage_orders/0"<span class="glyphicon glyphicon-trash"></span> New Orders </a></td>
+					<td><a class="btn btn-warning" href="/manage_orders/1"<span class="glyphicon glyphicon-trash"></span> In Preparation </a></td>
+					<td><a class="btn btn-info" href="/manage_orders/2"<span class="glyphicon glyphicon-trash"></span> Ready </a></td>
+					<td><a class="btn btn-success" href="/manage_orders/3"<span class="glyphicon glyphicon-trash"></span> Delivered </a></td>
+					<td><a class="btn btn-dark" href="/manage_orders/9"<span class="glyphicon glyphicon-trash"></span> Cancelled </a></td>
+				</tr>
+			</table>
 			<table class="table" border="0">
 				<tr>
-					<!--<a class="btn btn-light" href="/manage_orders/99"<span class="glyphicon glyphicon-trash"></span> All Orders </a>-->
-					<a class="btn btn-primary" href="/manage_orders/0"<span class="glyphicon glyphicon-trash"></span> New Orders </a>
-					<a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
-					<a class="btn btn-warning" href="/manage_orders/1"<span class="glyphicon glyphicon-trash"></span> In Preparation </a>
-					<a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
-					<a class="btn btn-info" href="/manage_orders/2"<span class="glyphicon glyphicon-trash"></span> Ready </a>
-					<a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
-					<a class="btn btn-success" href="/manage_orders/3"<span class="glyphicon glyphicon-trash"></span> Delivered </a>
-					<a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
-					<a class="btn btn-dark" href="/manage_orders/9"<span class="glyphicon glyphicon-trash"></span> Cancelled </a>
-					<a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
-					<a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
+					<th>Order ID</th>
+					<th>Name</th>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Delivery Date/Time</th>
+					{% if tipo_consulta == 'Ready' or tipo_consulta == 'Delivered' %}
+						<th>Address</th>
+					{% endif %}
+					{% if tipo_consulta != 'Delivered' and tipo_consulta != 'Cancelled' %}
+						<th>Actions</th>
+					{% endif %}
 				</tr>
-				<thead>
-					<tr>
-						<th>Order ID</th>
-						<th>Name</th>
-						<th>Product</th>
-						<th>Quantity</th>
-						<th>Delivery Date/Time</th>
-						{% if tipo_consulta == 'Ready' or tipo_consulta == 'Delivered' %}
-							<th>Address</th>
-						{% endif %}
-						{% if tipo_consulta != 'Delivered' and tipo_consulta != 'Cancelled' %}
-							<th>Actions</th>
-						{% endif %}
-					</tr>
-				</thead>
 				{% for order in manage_orders %}
 				<tr>
 					<td>{{order.0}}</td>
