@@ -12,7 +12,6 @@ from .views.manage_payments import ManagePaymentsView
 from .views.manage_inventory import ManageInventoryView
 from .middlewares.auth import auth_middleware
 
-
 urlpatterns = [
     path('', Index.as_view(), name='homepage'),
     path('store', store , name='store'),

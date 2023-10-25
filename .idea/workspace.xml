@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0026511d-f6ce-4fde-85b6-671aebc7350b" name="Changes" comment="">
+    <list default="true" id="cbcb72a7-c4bf-4c36-b027-66d8e3b36b29" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Brazuka/FileContentIndex/1f25ae6b-60d9-477c-8e84-b7a62816b96d.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Brazuka/FileContentIndex/270fb8ed-c4b2-484c-9a8f-b1f21a049c1b.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Brazuka/FileContentIndex/a84c095a-2d12-4f55-a741-d161a683b518.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Brazuka/FileContentIndex/b52e5801-a45a-4101-80cd-7d79d68a0bc1.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Brazuka/FileContentIndex/f5f83b3f-e62d-40c9-84fb-f9344f47548c.vsidx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Brazuka/config/applicationhost.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Brazuka/v17/.wsuo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/PythonSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/launch.vs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Brazuka.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Brazuka.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Eshop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,21 +37,21 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2WlKjlfi50oo8yVP5FDjDEhuv5y" />
+  <component name="ProjectId" id="2X83tech4xKzsx0RKwxwie1y3Hy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projetos/Brazuka/manage.py&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Projetos/CAIXA/Clearcase/Scripts",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="Brazuka" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="Brazuka" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Brazuka" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -54,35 +72,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Brazuka" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0026511d-f6ce-4fde-85b6-671aebc7350b" name="Changes" comment="" />
-      <created>1697301863317</created>
+      <changelist id="cbcb72a7-c4bf-4c36-b027-66d8e3b36b29" name="Changes" comment="" />
+      <created>1697997097176</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1697301863317</updated>
+      <updated>1697997097176</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="str(date.today())" language="Python" />
-        <watch expression="date_delivery" language="Python" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
